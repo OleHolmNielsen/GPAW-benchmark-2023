@@ -54,6 +54,13 @@ yum install Lmod
 
 A non-root user can install Lmod as documented in http://easybuild.readthedocs.io/en/latest/Installing-Lmod-without-root-permissions.html
 
+EasyBuild and certain modules need some prerequisite OS packages:
+
+```
+yum install tar gzip bzip2 unzip xz patch python-setuptools gcc-c++ python3
+yum install libibverbs-devel rdma-core-devel
+```
+
 Step 2: Installing EasyBuild
 ----------------------------
 
