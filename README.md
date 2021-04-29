@@ -1,4 +1,4 @@
-# GPAW-benchmark-2020
+# GPAW-benchmark-2021
 
 GPAW code building instructions and benchmark data
 --------------------------------------------------
@@ -230,11 +230,12 @@ Execute both of the GPAW modules as built in the above, one after the other:
 module list
 ```
 
-The verification tests should be executed with 8 single-threaded MPI tasks by:
+The verification tests should be executed 
+as shown in https://wiki.fysik.dtu.dk/gpaw/devel/testing.html with 8 single-threaded MPI tasks by:
 
 ```
 export OMP_NUM_THREADS=1 
-gpaw -P 8 test 
+mpiexec -n 8 pytest -v --pyargs gpaw
 ```
 
 Warning messages and “SKIPPED” tests in the test suite output are accepted, but FAILED tests are not acceptable and must be corrected.
@@ -243,7 +244,7 @@ The following success message must be printed at the end of the output file:
 All tests passed!
 ```
 
-An example output file is [gpaw_test.txt](gpaw_test.txt/).
+An example output file is [gpaw-test-intel-2020b.txt](gpaw-test-intel-2020b.txt/).
 
 Run the GPAW benchmarks
 -----------------------
