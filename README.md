@@ -320,9 +320,9 @@ The GPAW code records the elapsed wall-clock time and prints it at the end of
 the output files, for example:
 ```
 $ grep Total: MoS2-benchmark.txt
-Total:                                      XXXXXXX 100.0%
+Total:                                      5460.698 100.0%
 $ grep Total: Ru2Cl6-benchmark.txt 
-Total:                                       XXXXXXX 100.0%
+Total:                                       548.079 100.0%
 ```
 
 These ```Total:``` timings for Benchmarks 1 and 2, executed with both the foss-2020b and intel-2020b toolchains,
