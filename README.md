@@ -242,8 +242,9 @@ as shown in https://wiki.fysik.dtu.dk/gpaw/devel/testing.html with 8 single-thre
 
 ```
 export OMP_NUM_THREADS=1 
-mpiexec -n 8 pytest -v --pyargs gpaw
+mpiexec -n 8 pytest -c pytest.ini -v --pyargs gpaw --color=no
 ```
+The number of tasks must be one of 1, 2, 4 or 8.
 
 Warning messages and “SKIPPED” tests in the test suite output are accepted, but FAILED tests are not acceptable and must be corrected.
 An example output file is [gpaw-test-intel-2020b.txt](gpaw-test-intel-2020b.txt/).
