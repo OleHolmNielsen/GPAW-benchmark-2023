@@ -246,11 +246,6 @@ mpiexec -n 8 pytest -v --pyargs gpaw
 ```
 
 Warning messages and “SKIPPED” tests in the test suite output are accepted, but FAILED tests are not acceptable and must be corrected.
-The following success message must be printed at the end of the output file:
-```
-All tests passed!
-```
-
 An example output file is [gpaw-test-intel-2020b.txt](gpaw-test-intel-2020b.txt/).
 
 Run the GPAW benchmarks
