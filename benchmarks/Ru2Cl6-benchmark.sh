@@ -15,6 +15,8 @@
 echo Hostname: `hostname`
 echo CPU type:
 lscpu
+echo NUMA nodes:
+numactl --hardware
 
 module purge
 echo

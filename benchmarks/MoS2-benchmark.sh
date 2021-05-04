@@ -15,7 +15,8 @@
 echo Hostname: `hostname`
 echo CPU type:
 lscpu
-
+echo NUMA nodes:
+numactl --hardware
 
 module purge
 echo
@@ -31,6 +32,7 @@ printenv|grep SLURM
 # Run 1 thread per task
 export OMP_NUM_THREADS=1
 
+echo Running GPAW with $SLURM_NTASKS tasks.
 mpiexec gpaw -P $SLURM_NTASKS python MoS2-benchmark.py
 
 echo Extract numbers for correctness and timing
