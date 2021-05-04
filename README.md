@@ -302,13 +302,13 @@ To quickly verify the results, a few numbers from the output files may be extrac
 Benchmark 1:
 ```
 $ grep Free MoS2-benchmark.txt
-Free energy:   XXXXXXXXXXXXX
+Free energy:   -1287.277410
 ```
 
 Benchmark 2:
 ```
 $ grep Free Ru2Cl6-benchmark.txt
-Free energy:    XXXXXXXXXXXXX
+Free energy:    -28.475998
 ```
 
 It is expected that the mentioned numbers should vary only in the last digit by a small amount.
