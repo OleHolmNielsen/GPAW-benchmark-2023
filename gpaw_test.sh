@@ -35,4 +35,4 @@ export OMP_NUM_THREADS=1
 
 # The number of tasks must be 1, 2, 4 or 8.
 echo Running GPAW tests with 8 tasks.
-mpiexec -n 8 pytest -c pytest.ini -v --pyargs gpaw --color=no
+mpiexec -n 8 pytest --exitfirst -c pytest.ini -v --pyargs gpaw --color=no 
