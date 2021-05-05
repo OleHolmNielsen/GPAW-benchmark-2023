@@ -282,6 +282,9 @@ The script must then be executed interactively or submitted to a batch queue.
 Scripts must be run in the [benchmarks](benchmarks/) directory because the
 Python and json input files are required.
 
+The RAM memory requirement is especially high for the MoS2-benchmark.sh script,
+and a minimum of 256 GB system RAM memory may be needed, depending on the number of CPU cores used.
+
 After completing the benchmarks, results have been written to the output files :
 ```
 Benchmark 1: MoS2-benchmark.txt
