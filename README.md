@@ -254,8 +254,6 @@ Run the GPAW benchmarks
 
 The GPAW benchmarks must be executed on a single compute node, 
 using all CPU cores available in the system.
-The node must contain the same processor SKU, memory size and speed, 
-BIOS settings, and system chassis as the servers offered.
 
 The subdirectory [benchmarks](benchmarks/) contains the Python scripts,
 batch job shell scripts, and any further input files.
