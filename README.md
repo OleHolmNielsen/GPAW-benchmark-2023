@@ -75,7 +75,7 @@ than it should be!
 
 The CPU architecture may be printed using the command:
 ```
-gcc -march=native -Q --help=target | grep march
+gcc -march=native -Q --help=target | grep '^  -march'
 ```
 This information is only available with the GCC compiler version 4.9 and newer.
 Also the ```lscpu``` will reveal information about the type of CPU.
