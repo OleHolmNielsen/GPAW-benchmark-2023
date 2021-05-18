@@ -78,7 +78,7 @@ The CPU architecture may be printed using the command:
 gcc -march=native -Q --help=target | grep '^  -march'
 ```
 This information is only available with the GCC compiler version 4.9 and newer.
-Also the ```lscpu``` will reveal information about the type of CPU.
+Also the ```lscpu``` command will reveal information about the type of CPU.
 
 Brief EasyBuild installation instructions for CentOS 7 may be found in
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules.
@@ -162,7 +162,7 @@ icc, ifort, imkl, impi
 ```
 
 The Intel compilers icc, ifort, the MKL and MPI libraries are products offered by Intel.
-The intel-2020b toolchain requires exactly the Intel *Parallel Studio XE 2020 Update 5* version.
+The intel-2020b toolchain requires exactly the Intel *Parallel Studio XE 2020 Update 4* version.
 
 There are useful hints about Intel compiler installation and licenses in the web page
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#intel-compiler-toolchains
@@ -180,7 +180,7 @@ and move these files to the EasyBuild source directories:
 
 ```
 mkdir -p $HOME/modules/sources/i/iccifort $HOME/modules/sources/i/imkl $HOME/modules/sources/i/impi
-mv parallel_studio_xe_2020_update3_composer_edition.tgz $HOME/modules/sources/i/iccifort/
+mv parallel_studio_xe_2020_update4_composer_edition.tgz $HOME/modules/sources/i/iccifort/
 mv l_mkl_2020.4.304.tgz $HOME/modules/sources/i/imkl/
 mv l_mpi_2019.9.304.tgz $HOME/modules/sources/i/impi/
 ```
