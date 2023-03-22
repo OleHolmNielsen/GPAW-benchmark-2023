@@ -9,8 +9,9 @@ Subsequently a GPAW test and a GPAW benchmark run on a single compute node is do
 The benchmarks are designed to reflect our HPC software environment,
 and to run some representative physics problems using the GPAW code.
 
-The prerequisite operating system is CentOS 7.9
-(or compatible, for example Red Hat RHEL 7 Update 9).
+The prerequisite operating system is AlmaLinux 8.7 or RockyLinux 8.7
+(denoted as [EL8](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux),
+or compatible, for example Red Hat RHEL 8 Update 7) or newer.
 
 We require using the [EasyBuild](https://github.com/hpcugent/easybuild)
 software build and installation framework that allows you to manage
@@ -43,7 +44,7 @@ Step 1: Installing Lmod
 A software modules tool is a prerequisite, and the recommended tool is
 [Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod).
 
-Brief Lmod installation instructions for CentOS 7 may be found in
+Brief Lmod installation instructions for EL8 may be found in
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#install-lmod.
 The root superuser may install the Lmod RPM by:
 
@@ -80,7 +81,7 @@ gcc -march=native -Q --help=target | grep '^  -march'
 This information is only available with the GCC compiler version 4.9 and newer.
 Also the ```lscpu``` command will reveal information about the type of CPU.
 
-Brief EasyBuild installation instructions for CentOS 7 may be found in
+Brief EasyBuild installation instructions for EL8 may be found in
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules.
 There is an official
 [EasyBuild installation](https://easybuild.readthedocs.io/en/latest/Installation.html) 
