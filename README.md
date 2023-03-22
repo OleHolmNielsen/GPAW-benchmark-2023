@@ -22,8 +22,8 @@ In order to have a well-defined and reproducible software modules framework
 for the purpose of comparing benchmark results obtained on different systems,
 we require the use of specific software module [toolchains](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html)
 provided by EasyBuild version 4.7.1.
-Future versions of EasyBuild will contain newer toolchains in addition to
-the ones used in the present instruction, but the versions specified below must nevertheless be used.
+EasyBuild contains newer toolchains (such as 2022b) in addition to the ones used in the present instruction,
+but the versions specified in this document must nevertheless be used in order to make a working benchmark.
 
 The benchmark requires to build the GPAW code using both of the following 
 EasyBuild software module toolchains:
