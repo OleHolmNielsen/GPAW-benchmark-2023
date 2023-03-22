@@ -1,9 +1,9 @@
-# GPAW-benchmark-2021
+# GPAW-benchmark-2023
 
 GPAW code building instructions and benchmark data
 --------------------------------------------------
 
-The purpose of this page is to document the building of the [GPAW](https://wiki.fysik.dtu.dk/gpaw/) code release version 21.1.0.
+The purpose of this page is to document the building of the [GPAW](https://wiki.fysik.dtu.dk/gpaw/) code release version 22.08.0.
 Subsequently a GPAW test and a GPAW benchmark run on a single compute node is documented.
 
 The benchmarks are designed to reflect our HPC software environment,
@@ -27,9 +27,9 @@ the ones used in the present instruction, but the versions specified below must 
 The benchmark requires to build the GPAW code using both of the following 
 EasyBuild software module toolchains:
 
-1. intel-2020b: icc, ifort, imkl, impi
+1. intel-2022a: icc, ifort, imkl, impi
 
-2. foss-2020b: BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
+2. foss-2022a: BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
 
 The foss toolchain uses only Open Source software,
 whereas the intel toolchain requires licensed Intel C and Fortran compilers 
@@ -114,20 +114,20 @@ eb --version
 
 The EasyBuild version must be 4.3.4 or newer.
 
-Step 3: Build the foss-2020b toolchain
+Step 3: Build the foss-2022a toolchain
 --------------------------------------
 
-EasyBuild version 4.3.4 (and newer) contains the foss-2020b toolchain which is used to build GPAW.
+EasyBuild version 4.3.4 (and newer) contains the foss-2022a toolchain which is used to build GPAW.
 The foss toolchain contains the following modules:
 
 ```
 BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
 ```
 
-To build the foss-2020b toolchain run this command:
+To build the foss-2022a toolchain run this command:
 
 ```
-eb foss-2020b.eb -r
+eb foss-2022a.eb -r
 ```
 
 The building of GCC, OpenMPI and FFTW will be particularly time consuming,
@@ -136,25 +136,28 @@ and this task may take several hours!
 Now the foss toolchain modules can be loaded:
 
 ```
-$ module load foss/2020b
+$ module load foss/2022a
 $ module list
+
 Currently Loaded Modules:
-  1) GCCcore/10.2.0                    11) UCX/1.9.0-GCCcore-10.2.0
-  2) zlib/1.2.11-GCCcore-10.2.0        12) libfabric/1.11.0-GCCcore-10.2.0
-  3) binutils/2.35-GCCcore-10.2.0      13) PMIx/3.1.5-GCCcore-10.2.0
-  4) GCC/10.2.0                        14) OpenMPI/4.0.5-GCC-10.2.0
-  5) numactl/2.0.13-GCCcore-10.2.0     15) OpenBLAS/0.3.12-GCC-10.2.0
-  6) XZ/5.2.5-GCCcore-10.2.0           16) gompi/2020b
-  7) libxml2/2.9.10-GCCcore-10.2.0     17) FFTW/3.3.8-gompi-2020b
-  8) libpciaccess/0.16-GCCcore-10.2.0  18) ScaLAPACK/2.1.0-gompi-2020b
-  9) hwloc/2.2.0-GCCcore-10.2.0        19) foss/2020b
- 10) libevent/2.1.12-GCCcore-10.2.0
+  1) GCCcore/11.3.0                    13) libfabric/1.15.1-GCCcore-11.3.0
+  2) zlib/1.2.12-GCCcore-11.3.0        14) PMIx/4.1.2-GCCcore-11.3.0
+  3) binutils/2.38-GCCcore-11.3.0      15) UCC/1.0.0-GCCcore-11.3.0
+  4) GCC/11.3.0                        16) OpenMPI/4.1.4-GCC-11.3.0
+  5) numactl/2.0.14-GCCcore-11.3.0     17) OpenBLAS/0.3.20-GCC-11.3.0
+  6) XZ/5.2.5-GCCcore-11.3.0           18) FlexiBLAS/3.2.0-GCC-11.3.0
+  7) libxml2/2.9.13-GCCcore-11.3.0     19) FFTW/3.3.10-GCC-11.3.0
+  8) libpciaccess/0.16-GCCcore-11.3.0  20) gompi/2022a
+  9) hwloc/2.7.1-GCCcore-11.3.0        21) FFTW.MPI/3.3.10-gompi-2022a
+ 10) OpenSSL/1.1                       22) ScaLAPACK/2.2.0-gompi-2022a-fb
+ 11) libevent/2.1.12-GCCcore-11.3.0    23) foss/2022a
+ 12) UCX/1.12.1-GCCcore-11.3.0
 ```
 
-Step 4: Build the intel-2020b toolchain
+Step 4: Build the intel-2022a toolchain
 ---------------------------------------
 
-EasyBuild version 4.3.4 (and later) contains the intel-2020b toolchain which is used to build GPAW.
+EasyBuild version 4.3.4 (and later) contains the intel-2022a toolchain which is used to build GPAW.
 The intel toolchain contains the following modules:
 
 ```
@@ -162,7 +165,7 @@ icc, ifort, imkl, impi
 ```
 
 The Intel compilers icc, ifort, the MKL and MPI libraries are products offered by Intel.
-The intel-2020b toolchain requires exactly the Intel *Parallel Studio XE 2020 Update 4* version.
+The intel-2022a toolchain requires exactly the Intel *Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.6.0* version.
 
 There are useful hints about Intel compiler installation and licenses in the web page
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#intel-compiler-toolchains
@@ -174,10 +177,11 @@ export INTEL_LICENSE_FILE=28518@<license-server>
 export INTEL_LICENSE_FILE=<file-path>
 ```
 
-To build the intel-2020b toolchain first download the compiler and library tar-ball files as described in 
+To build the intel-2022a toolchain first download the compiler and library tar-ball files as described in 
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#intel-compiler-toolchains
 and move these files to the EasyBuild source directories:
 
+**CHANGE THIS**:
 ```
 mkdir -p $HOME/modules/sources/i/iccifort $HOME/modules/sources/i/imkl $HOME/modules/sources/i/impi
 mv parallel_studio_xe_2020_update4_composer_edition.tgz $HOME/modules/sources/i/iccifort/
@@ -188,41 +192,42 @@ mv l_mpi_2019.9.304.tgz $HOME/modules/sources/i/impi/
 Then run this command to build the intel toolchain:
 
 ```
-eb intel-2020b.eb -r
+eb intel-2022a.eb -r
 ```
 
 Now the intel toolchain modules can be loaded:
 
 ```
-$ module load intel/2020b
+$ module load intel/2022a
 $ module list
 
 Currently Loaded Modules:
-  1) GCCcore/10.2.0                  6) UCX/1.9.0-GCCcore-10.2.0
-  2) zlib/1.2.11-GCCcore-10.2.0      7) impi/2019.9.304-iccifort-2020.4.304
-  3) binutils/2.35-GCCcore-10.2.0    8) iimpi/2020b
-  4) iccifort/2020.4.304             9) imkl/2020.4.304-iimpi-2020b
-  5) numactl/2.0.13-GCCcore-10.2.0  10) intel/2020b
+  1) GCCcore/11.3.0                  7) impi/2021.6.0-intel-compilers-2022.1.0
+  2) zlib/1.2.12-GCCcore-11.3.0      8) imkl/2022.1.0
+  3) binutils/2.38-GCCcore-11.3.0    9) iimpi/2022a
+  4) intel-compilers/2022.1.0       10) imkl-FFTW/2022.1.0-iimpi-2022a
+  5) numactl/2.0.14-GCCcore-11.3.0  11) intel/2022a
+  6) UCX/1.12.1-GCCcore-11.3.0
 ```
 
-Build GPAW using the foss-2020b toolchain
+Build GPAW using the foss-2022a toolchain
 -----------------------------------------
 
-The GPAW release version 21.1.0 package is part of the EasyBuild official releases.
+The GPAW release version 22.08.0 is part of the EasyBuild official releases.
 
-Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with foss-2020b by:
+Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with foss-2022a by:
 ```
-eb GPAW-21.1.0-foss-2020b-ASE-3.21.1.eb -r
+eb GPAW-22.8.0-foss-2022a.eb -r
 ```
 
-Build GPAW using the intel-2020b toolchain
+Build GPAW using the intel-2022a toolchain
 ------------------------------------------
 
-The GPAW release version 21.1.0 package is part of the EasyBuild official releases.
+The GPAW release version 22.08.0 package is part of the EasyBuild official releases.
 
-Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with intel-2020b by:
+Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with intel-2022a by:
 ```
-eb GPAW-21.1.0-intel-2020b-ASE-3.21.1.eb -r
+eb GPAW-22.8.0-intel-2022a.eb -r
 ```
 
 Run GPAW verification tests
@@ -232,8 +237,8 @@ The GPAW verification tests are described in https://wiki.fysik.dtu.dk/gpaw/inst
 
 Execute both of the GPAW modules as built in the above, one after the other:
 ```
-1: module load GPAW/21.1.0-foss-2020b-ASE-3.21.1
-2: module load GPAW/21.1.0-intel-2020b-ASE-3.21.1
+1: module load GPAW/22.8.0-foss-2022a
+2: module load GPAW/22.8.0-intel-2022a
 module list
 ```
 
@@ -247,7 +252,7 @@ mpiexec -n 8 pytest --exitfirst -c pytest.ini -v --pyargs gpaw --color=no
 The number of tasks must be one of 1, 2, 4 or 8.
 
 Warning messages and “SKIPPED” tests in the test suite output are accepted, but FAILED tests are not acceptable and must be corrected.
-An example output file is [gpaw-test-intel-2020b.txt](gpaw-test-intel-2020b.txt/).
+An example output file is [gpaw-test-intel-2022a.txt](gpaw-test-intel-2022a.txt/).
 
 Run the GPAW benchmarks
 -----------------------
@@ -266,14 +271,14 @@ Benchmark 1: MoS2-benchmark.sh
 Benchmark 2: Ru2Cl6-benchmark.sh
 ```
 
-Execute the benchmarks with both of the GPAW modules (foss-2020b and intel-2020b)
+Execute the benchmarks with both of the GPAW modules (foss-2022a and intel-2022a)
 as built in the above, one after the other.
 The GPAW module with either intel or foss toolchain must be uncommented in the scripts:
 
 ```
 # Select ONE of these modules:
-module load GPAW/21.1.0-foss-2020b-ASE-3.21.1
-# module load GPAW/21.1.0-intel-2020b-ASE-3.21.1
+module load GPAW/22.8.0-foss-2022a
+# module load GPAW/22.8.0-intel-2022a
 ```
 
 The script must then be executed interactively or submitted to a batch queue.
@@ -326,6 +331,6 @@ $ grep Total: Ru2Cl6-benchmark.txt
 Total:                                       548.079 100.0%
 ```
 
-These ```Total:``` timings for Benchmarks 1 and 2, executed with both the foss-2020b and intel-2020b toolchains,
+These ```Total:``` timings for Benchmarks 1 and 2, executed with both the foss-2022a and intel-2022a toolchains,
 must be collected and rounded down to the nearest integer.
 The complete output files must also be collected and submitted.

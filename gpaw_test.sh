@@ -22,8 +22,8 @@ module purge
 echo
 echo module load GPAW
 # Select ONE of these modules:
-# module load GPAW/21.1.0-foss-2020b-ASE-3.21.1
-module load GPAW/21.1.0-intel-2020b-ASE-3.21.1
+# module load GPAW/22.8.0-foss-2022a
+module load GPAW/22.8.0-intel-2022a
 
 # module load GPAW
 mpiexec gpaw info
