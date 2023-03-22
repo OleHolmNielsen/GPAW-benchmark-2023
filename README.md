@@ -15,12 +15,12 @@ The prerequisite operating system is CentOS 7.9
 We require using the [EasyBuild](https://github.com/hpcugent/easybuild)
 software build and installation framework that allows you to manage
 (scientific) software on High Performance Computing (HPC) systems in an efficient way.
-The present instructions are based upon EasyBuild version 4.3.4.
+The present instructions are based upon EasyBuild version 4.7.1.
 
 In order to have a well-defined and reproducible software modules framework 
 for the purpose of comparing benchmark results obtained on different systems,
 we require the use of specific software module [toolchains](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html)
-provided by EasyBuild version 4.3.4.
+provided by EasyBuild version 4.7.1.
 Future versions of EasyBuild will contain newer toolchains in addition to
 the ones used in the present instruction, but the versions specified below must nevertheless be used.
 
@@ -112,12 +112,12 @@ module list
 eb --version
 ```
 
-The EasyBuild version must be 4.3.4 or newer.
+The EasyBuild version must be 4.7.1 or newer.
 
 Step 3: Build the foss-2022a toolchain
 --------------------------------------
 
-EasyBuild version 4.3.4 (and newer) contains the foss-2022a toolchain which is used to build GPAW.
+EasyBuild version 4.7.1 (and newer) contains the foss-2022a toolchain which is used to build GPAW.
 The foss toolchain contains the following modules:
 
 ```
@@ -157,7 +157,7 @@ Currently Loaded Modules:
 Step 4: Build the intel-2022a toolchain
 ---------------------------------------
 
-EasyBuild version 4.3.4 (and later) contains the intel-2022a toolchain which is used to build GPAW.
+EasyBuild version 4.7.1 (and later) contains the intel-2022a toolchain which is used to build GPAW.
 The intel toolchain contains the following modules:
 
 ```
