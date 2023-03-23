@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=Ru2Cl6-benchmark
 #SBATCH --mail-type=START,END
-#SBATCH --partition=xeon40_clx
+#SBATCH --partition=xeon56
 #SBATCH --output=%x-%j.out
 #SBATCH --time=6:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=40
+#SBATCH --ntasks=56
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=50G
 
@@ -35,7 +35,7 @@ export OMP_NUM_THREADS=1
 
 # mpiexec gpaw-python Ru2Cl6-benchmark.py
 echo Running GPAW with $SLURM_NTASKS tasks.
-mpiexec gpaw -P $SLURM_NTASKS python Ru2Cl6-benchmark.py
+mpiexec gpaw python Ru2Cl6-benchmark.py
 # Remove data file
 rm -f Ru2Cl6-benchmark.gpw
 
