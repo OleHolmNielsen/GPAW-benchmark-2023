@@ -315,7 +315,7 @@ Free energy:   -1287.277410
 Benchmark 2:
 ```
 $ grep Free Ru2Cl6-benchmark.txt
-Free energy:    -28.475998
+Free energy:    -28.476802
 ```
 
 It is expected that the mentioned numbers should vary only in the last digit by a small amount.
