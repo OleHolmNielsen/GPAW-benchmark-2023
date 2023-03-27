@@ -126,7 +126,7 @@ eb foss-2022a.eb -r
 ```
 
 The building of GCC, OpenMPI and FFTW will be particularly time consuming,
-and this task may take several hours!
+and this task may take a number of hours!
 
 Now the foss toolchain modules can be loaded:
 
