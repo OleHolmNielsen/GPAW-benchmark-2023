@@ -58,7 +58,7 @@ A non-root user can install Lmod as documented in http://easybuild.readthedocs.i
 EasyBuild and certain modules need some prerequisite OS packages:
 
 ```
-dnf install tar gzip bzip2 unzip xz patch python-setuptools gcc-c++ python3
+dnf install tar gzip bzip2 unzip xz patch python3-setuptools gcc-c++ python3
 dnf install libibverbs-devel rdma-core-devel
 ```
 
