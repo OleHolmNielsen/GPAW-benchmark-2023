@@ -88,10 +88,10 @@ There is an official
 guide with detailed instructions.
 
 Define the top-level directory and modules tool for your modules,
-for example on the node's local ``/tmp/modules`` folder:
+for example there could be the node's local ``/scratch/easybuild`` folder:
 ```
-mkdir /tmp/modules
-export EASYBUILD_PREFIX=/tmp/modules
+mkdir /scratch/easybuild
+export EASYBUILD_PREFIX=/scratch/easybuild
 export EASYBUILD_MODULES_TOOL=Lmod
 ```
 
@@ -100,7 +100,7 @@ as explained in the instructions:
 ```
 pip3 install --prefix $EASYBUILD_PREFIX easybuild
 export PATH=$EASYBUILD_PREFIX/bin:$PATH
-export PYTHONPATH=/tmp/modules/lib/python3.6/site-packages:$PYTHONPATH
+export PYTHONPATH=/scratch/easybuild/lib/python3.6/site-packages:$PYTHONPATH
 module use $EASYBUILD_PREFIX/modules/all
 eb --version
 ```
