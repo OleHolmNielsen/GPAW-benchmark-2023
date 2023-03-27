@@ -84,35 +84,26 @@ Also the ```lscpu``` command will reveal information about the type of CPU.
 Brief EasyBuild installation instructions for EL8 may be found in
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules.
 There is an official
-[EasyBuild installation](https://easybuild.readthedocs.io/en/latest/Installation.html) 
+[EasyBuild Installation](https://docs.easybuild.io/installation/) guide:
 guide with detailed instructions.
 
-Define the top-level directory and modules tool for your modules, for example:
-
+Define the top-level directory and modules tool for your modules,
+for example on the node's local ``/tmp/modules`` folder:
 ```
-mkdir $HOME/modules
-export EASYBUILD_PREFIX=$HOME/modules
+mkdir /tmp/modules
+export EASYBUILD_PREFIX=/tmp/modules
 export EASYBUILD_MODULES_TOOL=Lmod
 ```
-where $HOME is the normal user's home directory.
 
-Download and install EasyBuild:
-
+Install EasyBuild, update paths, and verify the ``eb`` command
+as explained in the instructions:
 ```
-curl -O https://raw.githubusercontent.com/hpcugent/easybuild-framework/develop/easybuild/scripts/bootstrap_eb.py
-python bootstrap_eb.py $EASYBUILD_PREFIX
-```
-
-Update the $MODULEPATH by module use, 
-then load the EasyBuild module and check the basic EasyBuild functionality:
-
-```
+pip3 install --prefix $EASYBUILD_PREFIX easybuild
+export PATH=$EASYBUILD_PREFIX/bin:$PATH
+export PYTHONPATH=/tmp/modules/lib/python3.6/site-packages:$PYTHONPATH
 module use $EASYBUILD_PREFIX/modules/all
-module load EasyBuild
-module list
 eb --version
 ```
-
 The EasyBuild version must be 4.7.1 or newer.
 
 Step 3: Build the foss-2022a toolchain
