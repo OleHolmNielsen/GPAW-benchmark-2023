@@ -151,45 +151,23 @@ Step 4: Build the intel-2022a toolchain
 ---------------------------------------
 
 EasyBuild version 4.7.1 (and later) contains the intel-2022a toolchain which is used to build GPAW.
-The intel toolchain contains the following modules:
+The intel toolchain contains the following modules with software offered by Intel:
 
 ```
 icc, ifort, imkl, impi
 ```
-
-The Intel compilers icc, ifort, the MKL and MPI libraries are products offered by Intel.
-The intel-2022a toolchain requires exactly the Intel *Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.6.0* version.
-
-There are useful hints about Intel compiler installation and licenses in the web page
-https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#intel-compiler-toolchains
-
-Specify your Intel *license-server* host port 28518 (for example) or just the license file path:
-
+You may specify your Intel *license-server* host port 28518 (for example) or just the license file path:
 ```
 export INTEL_LICENSE_FILE=28518@<license-server>
 export INTEL_LICENSE_FILE=<file-path>
 ```
 
-To build the intel-2022a toolchain first download the compiler and library tar-ball files as described in 
-https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#intel-compiler-toolchains
-and move these files to the EasyBuild source directories:
-
-**CHANGE THIS**:
+Then run this command to build the intel toolchain, accepting the *Intel-oneAPI* EULA:
 ```
-mkdir -p $HOME/modules/sources/i/iccifort $HOME/modules/sources/i/imkl $HOME/modules/sources/i/impi
-mv parallel_studio_xe_2020_update4_composer_edition.tgz $HOME/modules/sources/i/iccifort/
-mv l_mkl_2020.4.304.tgz $HOME/modules/sources/i/imkl/
-mv l_mpi_2019.9.304.tgz $HOME/modules/sources/i/impi/
-```
-
-Then run this command to build the intel toolchain:
-
-```
-eb intel-2022a.eb -r
+eb intel-2022a.eb -r --accept-eula-for=Intel-oneAPI
 ```
 
 Now the intel toolchain modules can be loaded:
-
 ```
 $ module load intel/2022a
 $ module list
