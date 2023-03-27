@@ -56,19 +56,18 @@ dnf install epel-release
 dnf install Lmod
 ```
 
-A non-root user can install Lmod as documented in [Installing Lmod without root permissions](https://docs.easybuild.io/installing-lmod-without-root-permissions/)
+whereas a non-root user can install Lmod as documented in [Installing Lmod without root permissions](https://docs.easybuild.io/installing-lmod-without-root-permissions/)
 
-EasyBuild and certain modules need some prerequisite OS packages:
+Step 2: Installing EasyBuild
+----------------------------
+
+EasyBuild must be installed as a normal user, however,
+EasyBuild and certain software modules need some prerequisite OS packages to be installed by the superuser:
 
 ```
 dnf install tar gzip bzip2 unzip xz patch python3-setuptools gcc-c++ python3
 dnf install libibverbs-devel rdma-core-devel
 ```
-
-Step 2: Installing EasyBuild
-----------------------------
-
-EasyBuild must be installed as a normal user.
 
 NOTICE: EasyBuild by default builds binary application codes which are optimized 
 for the host/node CPU architecture.  Therefore all software must be built on the 
@@ -86,20 +85,19 @@ Also the ```lscpu``` command will reveal information about the type of CPU.
 
 Brief EasyBuild installation instructions for EL8 may be found in
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules.
-There is an official
-[EasyBuild Installation](https://docs.easybuild.io/installation/) guide:
+There is an official [EasyBuild Installation](https://docs.easybuild.io/installation/)
 guide with detailed instructions.
+The following is a summary:
 
-Define the top-level directory and modules tool for your modules,
-for example, you could create a ``/scratch/easybuild`` folder on the node's local hard disk:
+1. Define the top-level directory and modules tool for your modules,
+   for example, you could create a ``/scratch/easybuild`` folder on the node's local hard disk:
 ```
 mkdir /scratch/easybuild
 export EASYBUILD_PREFIX=/scratch/easybuild
 export EASYBUILD_MODULES_TOOL=Lmod
 ```
 
-Install EasyBuild, update paths, and verify the ``eb`` command
-as explained in the instructions:
+2. Install EasyBuild, update paths, and verify the ``eb`` command as explained in the instructions:
 ```
 pip3 install --prefix $EASYBUILD_PREFIX easybuild
 export PATH=$EASYBUILD_PREFIX/bin:$PATH
@@ -107,7 +105,7 @@ export PYTHONPATH=/scratch/easybuild/lib/python3.6/site-packages:$PYTHONPATH
 module use $EASYBUILD_PREFIX/modules/all
 eb --version
 ```
-The EasyBuild version must be 4.7.1 or newer.
+   The EasyBuild version must be 4.7.1 or newer.
 
 Step 3: Build the foss-2022a toolchain
 --------------------------------------
