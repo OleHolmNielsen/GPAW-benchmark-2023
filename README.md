@@ -22,8 +22,11 @@ In order to have a well-defined and reproducible software modules framework
 for the purpose of comparing benchmark results obtained on different systems,
 we require the use of specific software module [toolchains](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html)
 provided by EasyBuild version 4.7.1.
+
 EasyBuild contains newer toolchains (such as 2022b) in addition to the ones used in the present instruction,
 but the versions specified in this document must nevertheless be used in order to make a working benchmark.
+The reason is that dependencies such as *SciPy* are not yet available in the ``intel-2022b`` toolchain,
+and that the GPAW self-test fails with the ``foss-2022b`` toolchain.
 
 The benchmark requires to build the GPAW code using both of the following 
 EasyBuild software module toolchains:
@@ -88,7 +91,7 @@ There is an official
 guide with detailed instructions.
 
 Define the top-level directory and modules tool for your modules,
-for example there could be the node's local ``/scratch/easybuild`` folder:
+for example, you could create a ``/scratch/easybuild`` folder on the node's local hard disk:
 ```
 mkdir /scratch/easybuild
 export EASYBUILD_PREFIX=/scratch/easybuild
