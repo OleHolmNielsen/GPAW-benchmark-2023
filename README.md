@@ -49,8 +49,8 @@ https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#install-lmod.
 The root superuser may install the Lmod RPM by:
 
 ```
-yum install epel-release
-yum install Lmod
+dnf install epel-release
+dnf install Lmod
 ```
 
 A non-root user can install Lmod as documented in http://easybuild.readthedocs.io/en/latest/Installing-Lmod-without-root-permissions.html
@@ -58,8 +58,8 @@ A non-root user can install Lmod as documented in http://easybuild.readthedocs.i
 EasyBuild and certain modules need some prerequisite OS packages:
 
 ```
-yum install tar gzip bzip2 unzip xz patch python-setuptools gcc-c++ python3
-yum install libibverbs-devel rdma-core-devel
+dnf install tar gzip bzip2 unzip xz patch python-setuptools gcc-c++ python3
+dnf install libibverbs-devel rdma-core-devel
 ```
 
 Step 2: Installing EasyBuild
