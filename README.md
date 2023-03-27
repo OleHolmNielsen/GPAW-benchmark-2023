@@ -20,7 +20,7 @@ The present instructions are based upon EasyBuild version 4.7.1.
 
 In order to have a well-defined and reproducible software modules framework 
 for the purpose of comparing benchmark results obtained on different systems,
-we require the use of specific software module [toolchains](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html)
+we require the use of specific software module [toolchains](https://docs.easybuild.io/common-toolchains/)
 provided by EasyBuild version 4.7.1.
 
 EasyBuild contains newer toolchains (such as 2022b) in addition to the ones used in the present instruction,
@@ -56,7 +56,7 @@ dnf install epel-release
 dnf install Lmod
 ```
 
-A non-root user can install Lmod as documented in https://docs.easybuild.io/installing-lmod-without-root-permissions/
+A non-root user can install Lmod as documented in [Installing Lmod without root permissions](https://docs.easybuild.io/installing-lmod-without-root-permissions/)
 
 EasyBuild and certain modules need some prerequisite OS packages:
 
