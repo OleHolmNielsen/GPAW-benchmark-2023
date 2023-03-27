@@ -92,8 +92,8 @@ The following is a summary:
 1. Define the top-level directory and modules tool for your modules,
    for example, you could create a ``/scratch/easybuild`` folder on the node's local hard disk:
 ```
-mkdir /scratch/easybuild
 export EASYBUILD_PREFIX=/scratch/easybuild
+mkdir $EASYBUILD_PREFIX
 export EASYBUILD_MODULES_TOOL=Lmod
 ```
 
@@ -101,7 +101,7 @@ export EASYBUILD_MODULES_TOOL=Lmod
 ```
 pip3 install --prefix $EASYBUILD_PREFIX easybuild
 export PATH=$EASYBUILD_PREFIX/bin:$PATH
-export PYTHONPATH=/scratch/easybuild/lib/python3.6/site-packages:$PYTHONPATH
+export PYTHONPATH=$EASYBUILD_PREFIX/lib/python3.6/site-packages:$PYTHONPATH
 module use $EASYBUILD_PREFIX/modules/all
 eb --version
 ```
@@ -124,7 +124,7 @@ eb foss-2022a.eb -r
 ```
 
 The building of GCC, OpenMPI and FFTW will be particularly time consuming,
-and this task may take a number of hours (especially for the ``FFTW`` modules)!
+and this task may take a number of hours (especially for the ``FFTW`` module)!
 
 Now the foss toolchain modules can be loaded:
 
