@@ -56,7 +56,7 @@ dnf install epel-release
 dnf install Lmod
 ```
 
-A non-root user can install Lmod as documented in http://easybuild.readthedocs.io/en/latest/Installing-Lmod-without-root-permissions.html
+A non-root user can install Lmod as documented in https://docs.easybuild.io/installing-lmod-without-root-permissions/
 
 EasyBuild and certain modules need some prerequisite OS packages:
 
@@ -294,7 +294,7 @@ Verification of correctness
 
 In order to verify that the benchmark calculations have produced correct results,
 numerical values in the sample output files should be compared to the reference output files.
-Here the [meld](http://meldmerge.org/) visual diff and merge tool can be very useful.
+Here the [meld](https://meldmerge.org/) visual diff and merge tool can be very useful.
 The meld RPM package is available from the
 [EPEL](https://fedoraproject.org/wiki/EPEL) repository.
 
