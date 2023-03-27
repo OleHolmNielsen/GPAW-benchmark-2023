@@ -1,13 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=MoS2-benchmark
 #SBATCH --mail-type=START,END
-#SBATCH --partition=xeon40_clx
+#SBATCH --partition=xeon56
 #SBATCH --output=%x-%j.out
 #SBATCH --time=6:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=40
+#SBATCH --ntasks=56
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=350G
 
 # This is a Slurm batch job script for the MoS2-benchmark.py benchmark.
 # It is assumed that a GPAW software module can be loaded.
@@ -33,7 +32,7 @@ printenv|grep SLURM
 export OMP_NUM_THREADS=1
 
 echo Running GPAW with $SLURM_NTASKS tasks.
-mpiexec gpaw -P $SLURM_NTASKS python MoS2-benchmark.py
+mpiexec gpaw python MoS2-benchmark.py
 
 echo Extract numbers for correctness and timing
 grep Free MoS2-benchmark.txt

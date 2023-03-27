@@ -309,7 +309,7 @@ Free energy:   -1287.277410
 Benchmark 2:
 ```
 $ grep Free Ru2Cl6-benchmark.txt
-Free energy:    -28.475998
+Free energy:    -28.476802
 ```
 
 It is expected that the mentioned numbers should vary only in the last digit by a small amount.
@@ -321,9 +321,9 @@ The GPAW code records the elapsed wall-clock time and prints it at the end of
 the output files, for example:
 ```
 $ grep Total: MoS2-benchmark.txt
-Total:                                      5460.698 100.0%
+Total:                                      5055.608 100.0%
 $ grep Total: Ru2Cl6-benchmark.txt 
-Total:                                       548.079 100.0%
+Total:                                      1179.073 100.0%
 ```
 
 These ```Total:``` timings for Benchmarks 1 and 2, executed with both the foss-2022a and intel-2022a toolchains,
