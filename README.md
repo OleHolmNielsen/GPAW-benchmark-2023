@@ -191,6 +191,11 @@ Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with
 eb GPAW-22.8.0-foss-2022a.eb -r
 ```
 
+Note: If download fails of the source file ```libxc-5.2.3.tar.gz``` from the unstable site *tddft.org*, 
+it can alternatively be downloaded from
+https://gitlab.com/libxc/libxc/-/archive/5.2.3/libxc-5.2.3.tar.gz
+and copied to ```$EASYBUILD_PREFIX/sources/l/libxc/```.
+
 Build GPAW using the intel-2022a toolchain
 ------------------------------------------
 
@@ -213,7 +218,12 @@ Execute both of the GPAW modules as built in the above, one after the other:
 module list
 ```
 
-The verification tests should be executed 
+Now you can clone the present repository:
+```
+git clone https://github.com/OleHolmNielsen/GPAW-benchmark-2023
+cd GPAW-benchmark-2023
+```
+and run the verification tests 
 as shown in https://wiki.fysik.dtu.dk/gpaw/devel/testing.html with 8 single-threaded MPI tasks by:
 
 ```
