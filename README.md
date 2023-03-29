@@ -181,8 +181,8 @@ Currently Loaded Modules:
   6) UCX/1.12.1-GCCcore-11.3.0
 ```
 
-Build GPAW using the foss-2022a toolchain
------------------------------------------
+Build GPAW using the foss-2022a and intel-2022a toolchains
+------------------------------------------------------------
 
 The GPAW release version 22.08.0 is part of the EasyBuild official releases.
 
@@ -196,15 +196,16 @@ it can alternatively be downloaded from
 https://gitlab.com/libxc/libxc/-/archive/5.2.3/libxc-5.2.3.tar.gz
 and copied to ```$EASYBUILD_PREFIX/sources/l/libxc/```.
 
-Build GPAW using the intel-2022a toolchain
-------------------------------------------
-
-The GPAW release version 22.08.0 package is part of the EasyBuild official releases.
-
-Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with intel-2022a by:
+Then build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with intel-2022a by:
 ```
 eb GPAW-22.8.0-intel-2022a.eb -r
 ```
+
+A patch is required for the GPAW verification tests,
+so it is actually necessary to rebuild GPAW from this *Pull Request*
+before proceeding to the GPAW tests::
+
+  eb --rebuild --from-pr=17618
 
 Run GPAW verification tests
 ---------------------------
