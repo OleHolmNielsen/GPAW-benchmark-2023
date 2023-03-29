@@ -232,6 +232,8 @@ mpiexec -n 8 pytest --exitfirst -c pytest.ini -v --pyargs gpaw --color=no
 ```
 The number of tasks must be one of 1, 2, 4 or 8.
 
+The script [gpaw_test.sh](gpaw_test.sh/) may be used to run the GPAW verification tests.
+
 Warning messages and “SKIPPED” tests in the test suite output are accepted, but FAILED tests are not acceptable and must be corrected.
 An example output file is [gpaw-test-intel-2022a.txt](gpaw-test-intel-2022a.txt/).
 
