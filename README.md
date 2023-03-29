@@ -203,9 +203,10 @@ eb GPAW-22.8.0-intel-2022a.eb -r
 
 A patch is required for the GPAW verification tests,
 so it is actually necessary to rebuild GPAW from this *Pull Request*
-before proceeding to the GPAW tests::
-
-  eb --rebuild --from-pr=17618
+before proceeding to the GPAW tests:
+```
+eb --rebuild --from-pr=17618
+```
 
 Run GPAW verification tests
 ---------------------------
