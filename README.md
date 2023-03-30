@@ -110,14 +110,14 @@ $ eb --version
 Step 3: Build the foss-2022a toolchain
 --------------------------------------
 
-EasyBuild version 4.7.1 (and newer) contains the foss-2022a toolchain which is used to build GPAW.
-The foss toolchain contains the following modules:
+EasyBuild version 4.7.1 (and newer) contains the ``foss-2022a`` toolchain which is used to build GPAW.
+The ``foss`` toolchain contains the following modules:
 
 ```
 BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
 ```
 
-To build the foss-2022a toolchain run this command:
+To build the ``foss-2022a`` toolchain run this command:
 
 ```
 $ eb foss-2022a.eb -r
@@ -126,7 +126,7 @@ $ eb foss-2022a.eb -r
 The building of GCC, OpenMPI and FFTW will be particularly time consuming,
 and this task may take a number of hours (especially for the ``FFTW`` module)!
 
-Now the foss toolchain modules can be loaded:
+Now the ``foss`` toolchain modules can be loaded:
 
 ```
 $ module load foss/2022a
@@ -186,7 +186,7 @@ Build GPAW using the foss-2022a and intel-2022a toolchains
 
 The GPAW release version 22.08.0 is part of the EasyBuild official releases.
 
-Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with foss-2022a by:
+Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with ``foss-2022a`` by:
 ```
 $ eb GPAW-22.8.0-foss-2022a.eb -r
 ```
@@ -256,9 +256,9 @@ Benchmark 1: MoS2-benchmark.sh
 Benchmark 2: Ru2Cl6-benchmark.sh
 ```
 
-Execute the benchmarks with both of the GPAW modules (foss-2022a and intel-2022a)
+Execute the benchmarks with both of the GPAW modules (``foss-2022a`` and ``intel-2022a``)
 as built in the above, one after the other.
-The GPAW module with either intel or foss toolchain must be uncommented in the scripts:
+The GPAW module with either intel or ``foss`` toolchain must be uncommented in the scripts:
 
 ```
 # Select ONE of these modules:
@@ -319,6 +319,6 @@ $ grep Total: Ru2Cl6-benchmark.txt
 Total:                                       877.165 100.0%
 ```
 
-These ```Total:``` timings for Benchmarks 1 and 2, executed with both the foss-2022a and intel-2022a toolchains,
+These ```Total:``` timings for Benchmarks 1 and 2, executed with both the ``foss-2022a`` and ``intel-2022a`` toolchains,
 must be collected and rounded down to the nearest integer.
 The complete output files must also be collected and submitted.
