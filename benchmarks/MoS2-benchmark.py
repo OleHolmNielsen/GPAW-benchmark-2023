@@ -22,7 +22,7 @@ kpoints = (4, 1, 1)
 atoms.center(vacuum=6, axis=[1, 2])
 atoms.pbc = True
 tag = 'MoS2-benchmark'
-atoms.calc = GPAW(gpts=(48, 168, 168),
+atoms.calc = GPAW(h=0.13,
                   eigensolver=Davidson(2),
                   xc='PBE',
                   txt=tag + '.txt',
