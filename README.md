@@ -35,8 +35,8 @@ EasyBuild software module toolchains:
 
 2. foss-2022a: BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
 
-The foss toolchain uses only Open Source software,
-whereas the intel toolchain requires licensed Intel C and Fortran compilers 
+The ``foss`` toolchain uses only Open Source software,
+whereas the ``intel`` toolchain requires licensed Intel C and Fortran compilers 
 as well as the Intel MKL and MPI libraries.
 For systems with processors that include AVX-512 vector support,
 it is anticipated that the MKL library may offer a better performance.
