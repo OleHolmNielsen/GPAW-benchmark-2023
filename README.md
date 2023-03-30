@@ -78,7 +78,7 @@ than it should be!
 
 The CPU architecture may be printed using the command:
 ```
-gcc -march=native -Q --help=target | grep '^  -march'
+$ gcc -march=native -Q --help=target | grep '^  -march'
 ```
 This information is only available with the GCC compiler version 4.9 and newer.
 Also the ```lscpu``` command will reveal information about the type of CPU.
@@ -92,18 +92,18 @@ The following is a summary:
 1. Define the top-level directory and modules tool for your modules,
    for example, you could create a ``/scratch/easybuild`` folder on the node's local hard disk:
 ```
-export EASYBUILD_PREFIX=/scratch/easybuild
-mkdir $EASYBUILD_PREFIX
-export EASYBUILD_MODULES_TOOL=Lmod
+$ export EASYBUILD_PREFIX=/scratch/easybuild
+$ mkdir $EASYBUILD_PREFIX
+$ export EASYBUILD_MODULES_TOOL=Lmod
 ```
 
 2. Install EasyBuild, update paths, and verify the ``eb`` command as explained in the instructions:
 ```
-pip3 install --prefix $EASYBUILD_PREFIX easybuild
-export PATH=$EASYBUILD_PREFIX/bin:$PATH
-export PYTHONPATH=$EASYBUILD_PREFIX/lib/python3.6/site-packages:$PYTHONPATH
-module use $EASYBUILD_PREFIX/modules/all
-eb --version
+$ pip3 install --prefix $EASYBUILD_PREFIX easybuild
+$ export PATH=$EASYBUILD_PREFIX/bin:$PATH
+$ export PYTHONPATH=$EASYBUILD_PREFIX/lib/python3.6/site-packages:$PYTHONPATH
+$ module use $EASYBUILD_PREFIX/modules/all
+$ eb --version
 ```
    The EasyBuild version must be 4.7.1 or newer.
 
@@ -120,7 +120,7 @@ BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
 To build the foss-2022a toolchain run this command:
 
 ```
-eb foss-2022a.eb -r
+$ eb foss-2022a.eb -r
 ```
 
 The building of GCC, OpenMPI and FFTW will be particularly time consuming,
@@ -156,15 +156,15 @@ The intel toolchain contains the following modules with software offered by Inte
 ```
 icc, ifort, imkl, impi
 ```
-You may specify your Intel *license-server* host port 28518 (for example) or just the license file path:
+If necesary, you may specify your Intel *license-server* host port 28518 (for example) or just the license file path:
 ```
-export INTEL_LICENSE_FILE=28518@<license-server>
-export INTEL_LICENSE_FILE=<file-path>
+$ export INTEL_LICENSE_FILE=28518@<license-server>
+$ export INTEL_LICENSE_FILE=<file-path>
 ```
 
 Then run this command to build the intel toolchain, accepting the *Intel-oneAPI* EULA:
 ```
-eb intel-2022a.eb -r --accept-eula-for=Intel-oneAPI
+$ eb intel-2022a.eb -r --accept-eula-for=Intel-oneAPI
 ```
 
 Now the intel toolchain modules can be loaded:
@@ -188,7 +188,7 @@ The GPAW release version 22.08.0 is part of the EasyBuild official releases.
 
 Build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with foss-2022a by:
 ```
-eb GPAW-22.8.0-foss-2022a.eb -r
+$ eb GPAW-22.8.0-foss-2022a.eb -r
 ```
 
 Note: If download fails of the source file ```libxc-5.2.3.tar.gz``` from the unstable site *tddft.org*, 
@@ -198,14 +198,14 @@ and copied to ```$EASYBUILD_PREFIX/sources/l/libxc/```.
 
 Then build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with intel-2022a by:
 ```
-eb GPAW-22.8.0-intel-2022a.eb -r
+$ eb GPAW-22.8.0-intel-2022a.eb -r
 ```
 
 A patch is required for the GPAW verification tests,
 so it is actually necessary to rebuild GPAW from this *Pull Request*
 before proceeding to the GPAW tests:
 ```
-eb --rebuild --from-pr=17618
+$ eb --rebuild --from-pr=17618
 ```
 
 Run GPAW verification tests
@@ -222,15 +222,15 @@ module list
 
 Now you can clone the present repository:
 ```
-git clone https://github.com/OleHolmNielsen/GPAW-benchmark-2023
-cd GPAW-benchmark-2023
+$ git clone https://github.com/OleHolmNielsen/GPAW-benchmark-2023
+$ cd GPAW-benchmark-2023
 ```
 and run the verification tests 
 as shown in https://wiki.fysik.dtu.dk/gpaw/devel/testing.html with 8 single-threaded MPI tasks by:
 
 ```
-export OMP_NUM_THREADS=1 
-mpiexec -n 8 pytest --exitfirst -c pytest.ini -v --pyargs gpaw --color=no
+$ export OMP_NUM_THREADS=1 
+$ mpiexec -n 8 pytest --exitfirst -c pytest.ini -v --pyargs gpaw --color=no
 ```
 The number of tasks must be one of 1, 2, 4 or 8.
 
