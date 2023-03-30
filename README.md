@@ -150,7 +150,7 @@ Currently Loaded Modules:
 Step 4: Build the intel-2022a toolchain
 ---------------------------------------
 
-EasyBuild version 4.7.1 (and later) contains the intel-2022a toolchain which is used to build GPAW.
+EasyBuild version 4.7.1 (and later) contains the ``intel-2022a`` toolchain which is used to build GPAW.
 The intel toolchain contains the following modules with software offered by Intel:
 
 ```
@@ -196,7 +196,7 @@ it can alternatively be downloaded from
 https://gitlab.com/libxc/libxc/-/archive/5.2.3/libxc-5.2.3.tar.gz
 and copied to ```$EASYBUILD_PREFIX/sources/l/libxc/```.
 
-Then build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with intel-2022a by:
+Then build the GPAW, GPAW-setups and ASE software modules plus all prerequisites with ``intel-2022a`` by:
 ```
 $ eb GPAW-22.8.0-intel-2022a.eb -r
 ```
