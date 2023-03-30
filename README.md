@@ -31,9 +31,9 @@ and that the GPAW self-test fails with the ``foss-2022b`` toolchain.
 The benchmark requires to build the GPAW code using both of the following 
 EasyBuild software module toolchains:
 
-1. intel-2022a: icc, ifort, imkl, impi
+1. ``intel-2022a``: icc, ifort, imkl, impi
 
-2. foss-2022a: BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
+2. ``foss-2022a``: BLACS, FFTW, GCC, OpenBLAS, OpenMPI, ScaLAPACK
 
 The ``foss`` toolchain uses only Open Source software,
 whereas the ``intel`` toolchain requires licensed Intel C and Fortran compilers 
@@ -47,16 +47,16 @@ Step 1: Installing Lmod
 A software modules tool is a prerequisite, and the recommended tool is
 [Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod).
 
-Brief Lmod installation instructions for EL8 may be found in
+Brief ``Lmod`` installation instructions for EL8 may be found in
 https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#install-lmod.
-The root superuser may install the Lmod RPM by:
+The root superuser may install the ``Lmod`` RPM by:
 
 ```
 $ dnf install epel-release
 $ dnf install Lmod
 ```
 
-whereas a non-root user can install Lmod as documented in [Installing Lmod without root permissions](https://docs.easybuild.io/installing-lmod-without-root-permissions/)
+whereas a non-root user can install ``Lmod`` as documented in [Installing Lmod without root permissions](https://docs.easybuild.io/installing-lmod-without-root-permissions/)
 
 Step 2: Installing EasyBuild
 ----------------------------
