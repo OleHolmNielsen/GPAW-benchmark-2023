@@ -151,7 +151,7 @@ Step 4: Build the intel-2022a toolchain
 ---------------------------------------
 
 EasyBuild version 4.7.1 (and later) contains the ``intel-2022a`` toolchain which is used to build GPAW.
-The intel toolchain contains the following modules with software offered by Intel:
+The ``intel`` toolchains contain the following modules with software offered by Intel:
 
 ```
 icc, ifort, imkl, impi
