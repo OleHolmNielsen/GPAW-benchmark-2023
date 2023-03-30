@@ -52,8 +52,8 @@ https://wiki.fysik.dtu.dk/niflheim/EasyBuild_modules#install-lmod.
 The root superuser may install the Lmod RPM by:
 
 ```
-dnf install epel-release
-dnf install Lmod
+$ dnf install epel-release
+$ dnf install Lmod
 ```
 
 whereas a non-root user can install Lmod as documented in [Installing Lmod without root permissions](https://docs.easybuild.io/installing-lmod-without-root-permissions/)
@@ -65,8 +65,8 @@ EasyBuild must be installed as a normal user, however,
 EasyBuild and certain software modules need some prerequisite OS packages to be installed by the superuser:
 
 ```
-dnf install tar gzip bzip2 unzip xz patch python3-setuptools gcc-c++ python3
-dnf install libibverbs-devel rdma-core-devel
+$ dnf install tar gzip bzip2 unzip xz patch python3-setuptools gcc-c++ python3
+$ dnf install libibverbs-devel rdma-core-devel
 ```
 
 NOTICE: EasyBuild by default builds binary application codes which are optimized 
@@ -288,7 +288,7 @@ Here the [meld](https://meldmerge.org/) visual diff and merge tool can be very u
 The [meld](https://meldmerge.org/) RPM package is available from the
 [EPEL](https://fedoraproject.org/wiki/EPEL) repository and can be installed by:
 ```
-  dnf install meld
+$ dnf install meld
 ```
 
 To quickly verify the results, a few numbers from the output files may be extracted as follows:
