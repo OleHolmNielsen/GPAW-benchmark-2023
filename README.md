@@ -286,9 +286,10 @@ In order to verify that the benchmark calculations have produced correct results
 numerical values in the sample output files should be compared to the reference output files.
 Here the [meld](https://meldmerge.org/) visual diff and merge tool can be very useful.
 The [meld](https://meldmerge.org/) RPM package is available from the
-[EPEL](https://fedoraproject.org/wiki/EPEL) repository and can be installed by::
-
+[EPEL](https://fedoraproject.org/wiki/EPEL) repository and can be installed by:
+```
   dnf install meld
+```
 
 To quickly verify the results, a few numbers from the output files may be extracted as follows:
 
