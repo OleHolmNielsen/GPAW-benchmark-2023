@@ -295,7 +295,7 @@ To quickly verify the results, a few numbers from the output files may be extrac
 Benchmark 1:
 ```
 $ grep Free MoS2-benchmark.txt
-Free energy:   -1287.277410
+Free energy:   -1290.606343
 ```
 
 Benchmark 2:
@@ -313,7 +313,7 @@ The GPAW code records the elapsed wall-clock time and prints it at the end of
 the output files, for example:
 ```
 $ grep Total: MoS2-benchmark.txt
-Total:                                      4050.393 100.0%
+Total:                                      8897.064 100.0%
 $ grep Total: Ru2Cl6-benchmark.txt 
 Total:                                       877.165 100.0%
 ```
