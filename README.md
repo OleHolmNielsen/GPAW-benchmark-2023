@@ -319,5 +319,5 @@ Total:                                       877.165 100.0%
 ```
 
 These ```Total:``` timings for Benchmarks 1 and 2, executed with both the ``foss-2022a`` and ``intel-2022a`` toolchains,
-must be collected and rounded down to the nearest integer.
+must be collected and **rounded down to the nearest integer**.
 The complete output files must also be collected and submitted.
