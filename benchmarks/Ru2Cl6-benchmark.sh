@@ -7,7 +7,6 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=56
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=50G
 
 # This is a Slurm batch job script for the Ru2Cl6-benchmark.py benchmark.
 # It is assumed that a GPAW 1.4 software module can be loaded.
